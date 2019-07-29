@@ -16,4 +16,4 @@ Get yourself a fasta file to downsample and run this:
 ```bash
 ./downsampler.sh 1000 input.fasta
 ```
-You have the fasta file placed in this directory and you have to give the arguments in the order above.
+You must have the fasta file placed in this directory and you have to give the arguments in the order above.
