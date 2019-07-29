@@ -35,7 +35,7 @@ rm temp.fasta
 echo "Making fasta index file"
 docker run --rm -ti -u $UID:1000 -v $(pwd):/data -w /data oskarv/snakemake-germline-tools:4.1.2.0 samtools faidx outputs/tiny.fasta
 
-# Fancy oneline for bed making from a fai file
+# Fancy oneliner for bed making from a fai file
 echo "It's time to make a bed file with awk"
 awk 'BEGIN {FS="\t"}; {print $1 FS "0" FS $2}' outputs/tiny.fasta.fai > outputs/tiny.bed
 
