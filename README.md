@@ -1,7 +1,7 @@
 # fasta-downsampler
 Make smaller fasta files and generate indexes, a bed file and a dict file
 
-N.B: The default is that it only works for chromosomes named "chr1, chr2, chr3 ..."
+N.B: The default is that it only works for chromosomes named "chr1, chr2, chr3 ..."  
 N.B2: If one of your contigs is shorter than your desired length you will end up with duplicated contigs.
 
 ## Features
