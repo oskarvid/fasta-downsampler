@@ -19,7 +19,7 @@ while getopts 'd:f:h' flag; do
 	d)
 		d=${OPTARG}
 		if [[ $d != [0-9]*  ]]; then
-			err "You forgot to supply a desired new fasta file length"
+			err "You forgot to supply a desired new contig length"
 			usage
 		elif [[ $d == [0-9]* ]]; then
 			SIZE=$d
