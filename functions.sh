@@ -18,8 +18,8 @@ die () {
 
 # Use this is error messages and such
 usage () {
-echo "Usage: $0 -s N -f file.fasta
--s, generate fasta file with contigs of N length
+echo "Usage: $0 -d N -f file.fasta
+-d, generate fasta file with contigs of N length
 -f, fasta file with contigs named chr"
 exit
 }

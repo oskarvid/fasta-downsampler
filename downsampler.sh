@@ -67,12 +67,12 @@ inf "It's time to make a bed file with awk"
 awk 'BEGIN {FS="\t"}; {print $1 FS "0" FS $2}' outputs/tiny.fasta.fai > outputs/tiny.bed
 
 # Docker to the rescue once again once again!
-inf "Executing docker to make a dictionary"
-docker run --rm -ti -u $UID:1000 -v $(pwd):/data -w /data oskarv/snakemake-germline-tools:4.1.2.0 gatk CreateSequenceDictionary -R outputs/tiny.fasta
+#inf "Executing docker to make a dictionary"
+#docker run --rm -ti -u $UID:1000 -v $(pwd):/data -w /data oskarv/snakemake-germline-tools:4.1.2.0 gatk CreateSequenceDictionary -R outputs/tiny.fasta
 
 # Run bwa index
-inf "Running bwa index"
-docker run --rm -ti -u $UID:1000 -v $(pwd):/data -w /data oskarv/snakemake-germline-tools:4.1.2.0 bwa index -a bwtsw outputs/tiny.fasta
+#inf "Running bwa index"
+#docker run --rm -ti -u $UID:1000 -v $(pwd):/data -w /data oskarv/snakemake-germline-tools:4.1.2.0 bwa index -a bwtsw outputs/tiny.fasta
 
 # Use pigz because the name is funny and also because it's parallelized! Foar moar coares!
 if [[ $(which pigz) ]]; then

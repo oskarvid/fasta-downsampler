@@ -1,4 +1,5 @@
 # fasta-downsampler
+[![Travis Build Status](https://img.shields.io/travis/oskarvid/fasta-downsampler.svg?logo=travis)](https://travis-ci.org/oskarvid/fasta-downsampler)  
 Make smaller fasta files and generate indexes, a bed file and a dict file
 
 N.B: The default is that it only works for chromosomes named "chr1, chr2, chr3 ..."  
@@ -15,6 +16,6 @@ It runs in a docker container, install docker using the appropriate instructions
 
 Get yourself a fasta file to downsample and run this:
 ```bash
-./downsampler.sh 1000 input.fasta
+./downsampler.sh -d 1000 -f input.fasta
 ```
 You must have the fasta file placed in this directory and you have to give the arguments in the order above.
