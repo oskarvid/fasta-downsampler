@@ -27,7 +27,7 @@ while getopts 'd:f:h' flag; do
 		;;
 	f)
 		f=${OPTARG}
-		if [[ -f $f && $f == *.fasta ]]; then
+		if [[ -f $f && $f == *.fasta || $f == *.fna || $f == *.fa ]]; then
 			FASTA=$f
 		elif [[ ! -f $f || $f != *.fasta ]]; then
 			err "You must use an uncompressed fasta file as input"
@@ -50,7 +50,7 @@ rm -f outputs/* 2>/dev/null
 # I tried skipping the temp.fasta file by piping these grep and sed commands but it was way slower than splitting it like this
 # Piping took 1 min 12s while splitting took 22s
 inf "Running grep"
-grep -A $SIZE ">chr" $FASTA >> temp.fasta
+grep -A $SIZE -i ">chr" $FASTA >> temp.fasta
 inf "Running sed"
 sed 's/LN:[0-9]*/LN:'"$SIZE"'/' temp.fasta > outputs/tiny.fasta
 
