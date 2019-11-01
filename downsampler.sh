@@ -43,6 +43,7 @@ while getopts 'd:f:h' flag; do
 	esac
 done
 
+mkdir -p outputs
 # Remove previous output files if you want to make them smaller or bigger
 inf "Removing previous output files"
 rm -f outputs/* 2>/dev/null
