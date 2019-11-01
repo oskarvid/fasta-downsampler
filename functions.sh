@@ -14,6 +14,7 @@ die () {
 	err "Execution failed on line $BASH_LINENO in $0"
 	inf "Removing previous output files"
 	rm -f outputs/* 2>/dev/null
+	exit 1
 }
 
 # Use this is error messages and such
