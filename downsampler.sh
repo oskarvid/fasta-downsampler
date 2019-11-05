@@ -85,3 +85,16 @@ else
 fi
 
 succ "All done!"
+
+# Testing hound
+#exit 1
+
+for i in {1..10}; do
+	echo $i
+done
+
+for i in `seq 1 10`
+do
+	printf "$i\n"; done
+
+printf "%s\n" {1..10}
